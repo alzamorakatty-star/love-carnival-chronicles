@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Languages, CircleAlert } from 'lucide-react';
+import { Languages, CircleAlert, HeartHandshake, Wine, Music2, Sparkles } from 'lucide-react';
 import CountdownTimer from "@/components/CountdownTimer";
 import watercolorFlower from '@/assets/watercolor-flower-cool.png';
 import MapSection from '@/components/MapSection';
@@ -188,10 +188,10 @@ const translations = {
     locationTitle: "Ubicación",
     timelineTitle: "Lo que viviremos juntos",
     timeline: [
-      { icon: "💍", title: "Ceremonia", time: "16:00" },
-      { icon: "🥂", title: "Recepción y Cena", time: "18:00" },
-      { icon: "🎶", title: "Fiesta", time: "20:00" },
-      { icon: "🎉", title: "Cierre", time: "02:00" },
+      { icon: HeartHandshake, title: "Ceremonia", time: "16:00" },
+      { icon: Wine, title: "Recepción y Cena", time: "18:00" },
+      { icon: Music2, title: "Fiesta", time: "20:00" },
+      { icon: Sparkles, title: "Cierre", time: "02:00" },
     ],
     dressCodeTitle: "Código de Vestimenta",
     dressCodeDesc: "Queremos que luzcas increíble. Inspírate con esta paleta y estilo.",
@@ -229,10 +229,10 @@ const translations = {
     locationTitle: "Location",
     timelineTitle: "What We'll Experience Together",
     timeline: [
-      { icon: "💍", title: "Ceremony", time: "16:00" },
-      { icon: "🥂", title: "Reception & Dinner", time: "18:00" },
-      { icon: "🎶", title: "Party", time: "20:00" },
-      { icon: "🎉", title: "Closing", time: "02:00" },
+      { icon: HeartHandshake, title: "Ceremony", time: "16:00" },
+      { icon: Wine, title: "Reception & Dinner", time: "18:00" },
+      { icon: Music2, title: "Party", time: "20:00" },
+      { icon: Sparkles, title: "Closing", time: "02:00" },
     ],
     dressCodeTitle: "Dress Code",
     dressCodeDesc: "We want you to look amazing. Get inspired by this palette and mood.",

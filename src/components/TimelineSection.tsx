@@ -1,7 +1,7 @@
 import { LucideIcon } from 'lucide-react';
 
 interface TimelineEvent {
-  icon: string;
+  icon: LucideIcon;
   title: string;
   time: string;
 }
@@ -19,7 +19,7 @@ const TimelineSection = ({ events }: TimelineSectionProps) => {
             {/* Circular icon container with enhanced styling */}
             <div className="relative group">
               <div className="w-24 h-24 rounded-full bg-gradient-to-br from-pink-50 via-rose-50 to-amber-50 border-3 border-pink-200/60 flex items-center justify-center shadow-elegant hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <span className="text-4xl filter drop-shadow-sm">{event.icon}</span>
+                <event.icon className="w-10 h-10 text-primary/80 stroke-[1.5]" />
               </div>
               {/* Elegant connecting line */}
               {index < events.length - 1 && (
