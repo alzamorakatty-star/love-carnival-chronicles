@@ -12,27 +12,27 @@ interface TimelineSectionProps {
 
 const TimelineSection = ({ events }: TimelineSectionProps) => {
   return (
-    <div className="w-full overflow-x-auto pb-4">
-      <div className="flex gap-6 md:gap-8 min-w-max md:min-w-0 md:justify-center px-4">
+    <div className="w-full overflow-x-auto pb-6 scrollbar-hide">
+      <div className="flex gap-8 md:gap-12 min-w-max md:min-w-0 md:justify-center px-6">
         {events.map((event, index) => (
-          <div key={index} className="flex flex-col items-center space-y-3 min-w-[120px]">
-            {/* Circular icon container */}
-            <div className="relative">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-pink-100 to-amber-50 border-2 border-pink-200/50 flex items-center justify-center shadow-md">
-                <span className="text-3xl">{event.icon}</span>
+          <div key={index} className="flex flex-col items-center space-y-4 min-w-[140px] animate-fade-in">
+            {/* Circular icon container with enhanced styling */}
+            <div className="relative group">
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-pink-50 via-rose-50 to-amber-50 border-3 border-pink-200/60 flex items-center justify-center shadow-elegant hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <span className="text-4xl filter drop-shadow-sm">{event.icon}</span>
               </div>
-              {/* Connecting line (hidden on last item) */}
+              {/* Elegant connecting line */}
               {index < events.length - 1 && (
-                <div className="hidden md:block absolute top-10 left-20 w-8 h-0.5 bg-gradient-to-r from-pink-200/50 to-amber-100/50" />
+                <div className="hidden md:block absolute top-12 left-24 w-12 h-[2px] bg-gradient-to-r from-pink-200/60 via-rose-200/40 to-amber-100/60" />
               )}
             </div>
             
-            {/* Event details */}
-            <div className="text-center space-y-1">
-              <p className="font-playfair text-foreground text-sm md:text-base font-medium">
+            {/* Event details with refined typography */}
+            <div className="text-center space-y-2">
+              <p className="font-playfair text-foreground text-base md:text-lg font-medium tracking-wide">
                 {event.title}
               </p>
-              <p className="font-playfair text-primary text-base md:text-lg font-semibold">
+              <p className="font-playfair text-primary text-lg md:text-xl font-semibold">
                 {event.time}
               </p>
             </div>
