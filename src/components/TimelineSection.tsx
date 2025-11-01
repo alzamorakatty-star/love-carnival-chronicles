@@ -1,4 +1,4 @@
-import { LucideIcon, Heart } from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
 
 interface TimelineEvent {
   icon: LucideIcon;
@@ -12,37 +12,28 @@ interface TimelineSectionProps {
 
 const TimelineSection = ({ events }: TimelineSectionProps) => {
   return (
-    <div className="w-full overflow-x-auto pb-8 scrollbar-hide">
-      <div className="flex gap-4 md:gap-8 min-w-max md:min-w-0 md:justify-center px-6">
+    <div className="w-full overflow-x-auto pb-6 scrollbar-hide">
+      <div className="flex gap-8 md:gap-12 min-w-max md:min-w-0 md:justify-center px-6">
         {events.map((event, index) => (
-          <div key={index} className="flex flex-col items-center space-y-3 min-w-[160px] animate-fade-in">
-            {/* Circular icon container matching reference image */}
-            <div className="relative">
-              {/* Decorative heart above some circles */}
-              {index % 2 === 0 && (
-                <Heart 
-                  className="absolute -top-8 left-1/2 -translate-x-1/2 w-4 h-4 text-pink-300/60 fill-pink-300/40" 
-                />
-              )}
-              
-              {/* Main circle with icon */}
-              <div className="relative w-32 h-32 rounded-full bg-background border-2 border-pink-200/40 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group">
-                <event.icon className="w-12 h-12 text-amber-600/70 stroke-[1.5] group-hover:scale-110 transition-transform duration-300" />
-                
-                {/* Connecting arc line */}
-                {index < events.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-[2px] bg-pink-200/30" />
-                )}
+          <div key={index} className="flex flex-col items-center space-y-4 min-w-[140px] animate-fade-in">
+            {/* Circular icon container with enhanced styling */}
+            <div className="relative group">
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-pink-50 via-rose-50 to-amber-50 border-3 border-pink-200/60 flex items-center justify-center shadow-elegant hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <event.icon className="w-10 h-10 text-primary/80 stroke-[1.5]" />
               </div>
+              {/* Elegant connecting line */}
+              {index < events.length - 1 && (
+                <div className="hidden md:block absolute top-12 left-24 w-12 h-[2px] bg-gradient-to-r from-pink-200/60 via-rose-200/40 to-amber-100/60" />
+              )}
             </div>
             
-            {/* Time and event label */}
-            <div className="text-center space-y-1">
-              <p className="font-playfair text-amber-600/80 text-xl md:text-2xl font-medium">
-                {event.time}
-              </p>
-              <p className="font-playfair text-pink-300/70 text-sm md:text-base uppercase tracking-widest">
+            {/* Event details with refined typography */}
+            <div className="text-center space-y-2">
+              <p className="font-playfair text-foreground text-base md:text-lg font-medium tracking-wide">
                 {event.title}
+              </p>
+              <p className="font-playfair text-primary text-lg md:text-xl font-semibold">
+                {event.time}
               </p>
             </div>
           </div>
