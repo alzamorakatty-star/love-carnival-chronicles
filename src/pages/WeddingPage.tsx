@@ -5,6 +5,7 @@ import CountdownTimer from "@/components/CountdownTimer";
 import watercolorFlower from '@/assets/watercolor-flower-cool.png';
 import MapSection from '@/components/MapSection';
 import FebruaryCalendar from '@/components/FebruaryCalendar';
+import TimelineSection from '@/components/TimelineSection';
 
 const WeddingPage = () => {
   const [isSpanish, setIsSpanish] = useState(true);
@@ -75,20 +76,10 @@ const WeddingPage = () => {
 
         {/* Timeline */}
         <section>
-          <h3 className="text-2xl md:text-3xl font-dancing text-primary text-center mb-6">
+          <h3 className="text-2xl md:text-3xl font-dancing text-primary text-center mb-8">
             {t.timelineTitle}
           </h3>
-          <div className="grid gap-4 text-center font-playfair text-foreground">
-            <div>
-              💍 {t.timeline.ceremony}
-            </div>
-            <div>
-              🥂 {t.timeline.reception}
-            </div>
-            <div>
-              🎶 {t.timeline.party}
-            </div>
-          </div>
+          <TimelineSection events={t.timeline} />
         </section>
 
         {/* Dress code */}
@@ -196,11 +187,12 @@ const translations = {
     intro: "Calle 64 #53-94, Barrio El Prado, Barranquilla, Colombia.",
     locationTitle: "Ubicación",
     timelineTitle: "Lo que viviremos juntos",
-    timeline: {
-      ceremony: "Ceremonia | 16:00–17:45",
-      reception: "Recepción y Cena | 18:00–19:30",
-      party: "Fiesta | 20:00–2:00",
-    },
+    timeline: [
+      { icon: "💍", title: "Ceremonia", time: "16:00" },
+      { icon: "🥂", title: "Recepción y Cena", time: "18:00" },
+      { icon: "🎶", title: "Fiesta", time: "20:00" },
+      { icon: "🎉", title: "Hora Loca & Cierre", time: "24:00–2:00" },
+    ],
     dressCodeTitle: "Código de Vestimenta",
     dressCodeDesc: "Queremos que luzcas increíble. Inspírate con esta paleta y estilo.",
     carnivalTitle: "Carnaval de Barranquilla",
@@ -236,11 +228,12 @@ const translations = {
     intro: "Calle 64 #53-94, Barrio El Prado, Barranquilla, Colombia.",
     locationTitle: "Location",
     timelineTitle: "What We'll Experience Together",
-    timeline: {
-      ceremony: "Ceremony | 16:00–17:45",
-      reception: "Reception & Dinner | 18:00–19:30",
-      party: "Party | 20:00–2:00",
-    },
+    timeline: [
+      { icon: "💍", title: "Ceremony", time: "16:00" },
+      { icon: "🥂", title: "Reception & Dinner", time: "18:00" },
+      { icon: "🎶", title: "Party", time: "20:00" },
+      { icon: "🎉", title: "Hora Loca & Closing", time: "24:00–2:00" },
+    ],
     dressCodeTitle: "Dress Code",
     dressCodeDesc: "We want you to look amazing. Get inspired by this palette and mood.",
     carnivalTitle: "Barranquilla Carnival",
